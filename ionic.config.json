@@ -1,5 +1,7 @@
 {
   "name": "camloc",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
