@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Exif
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="block" fill="outline" (click)="takePicture();">Take Picture</ion-button>
+  <ion-button expand="block" fill="outline" (click)="fetchMyLocation();">Register My Location</ion-button>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item *ngIf="registeredLat">
+        <h2>Registered Latitude</h2>
+        <p>{{registeredLat}}</p>
+      </ion-item>
+      <ion-item *ngIf="registeredLon">
+        <h2>Registered Longitude</h2>
+        <p>{{registeredLon}}</p>
+      </ion-item>
+      <ion-item *ngIf="geolocationError">
+        <h2>GPS Error</h2>
+        <p>{{geolocationError}}</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let image of images; let i = index;">
+    <img [src]="image.base64" />
+    <ion-card-content>
+      <ion-item *ngIf="currentLat">
+        <h2>Current Latitude</h2>
+        <p>{{currentLat}}</p>
+      </ion-item>
+      <ion-item *ngIf="currentLon">
+        <h2>Current Longitude</h2>
+        <p>{{currentLon}}</p>
+      </ion-item>
+      <ion-item *ngIf="radius">
+        <h2>Radius</h2>
+        <p>{{radius}} mtrs</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

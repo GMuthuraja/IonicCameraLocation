@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { Camera } from '@ionic-native/camera/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
